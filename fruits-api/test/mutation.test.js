@@ -1,13 +1,15 @@
-const { ApolloServer, gql } = require('apollo-server-lambda');
-const { createTestClient } = require("apollo-server-testing");
-const { typeDefs, resolvers } = require('../graphql/index');
+import { ApolloServer, gql } from 'apollo-server-lambda';
+import { createTestClient } from 'apollo-server-testing';
+import { typeDefs, resolvers } from '../graphql/index';
+import { describe, it, expect } from 'vitest'
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const { mutate } = createTestClient(server);
 
-test("Add fruit", async () => {
-  const ADD_FRUIT = gql`
+describe('Fruit API - Query', () => {
+  it("Add fruit", async () => {
+    const ADD_FRUIT = gql`
     mutation {
      addFruit(
       id: "0"
@@ -37,27 +39,27 @@ test("Add fruit", async () => {
   }
   `;
 
-  const {
-    data: { addFruit }
-  } = await mutate({ mutation: ADD_FRUIT });
+    const {
+      data: { addFruit }
+    } = await mutate({ mutation: ADD_FRUIT });
 
-  expect(addFruit).toEqual({
-    id: "0",
-    scientific_name: "Malus Domestica",
-    tree_name: "Manzano",
-    fruit_name: "Manzana",
-    family: "Rosaceae",
-    origin: "Asia Central",
-    description: "La manzana es el fruto del manzano, árbol de la familia de las rosáceas. Es una fruta pomácea de forma",
-    bloom: "Primavera",
-    maturation_fruit: "Finales del verano o otoño",
-    life_cycle: "60-80 años",
-    climatic_zone: "Frio"
+    expect(addFruit).toEqual({
+      id: "0",
+      scientific_name: "Malus Domestica",
+      tree_name: "Manzano",
+      fruit_name: "Manzana",
+      family: "Rosaceae",
+      origin: "Asia Central",
+      description: "La manzana es el fruto del manzano, árbol de la familia de las rosáceas. Es una fruta pomácea de forma",
+      bloom: "Primavera",
+      maturation_fruit: "Finales del verano o otoño",
+      life_cycle: "60-80 años",
+      climatic_zone: "Frio"
+    });
   });
-});
 
-test("Update fruit", async () => {
-  const UPDATE_FRUIT = gql`
+  it("Update fruit", async () => {
+    const UPDATE_FRUIT = gql`
     mutation {
      updateFruit(
       id: "0"
@@ -87,27 +89,27 @@ test("Update fruit", async () => {
   }
   `;
 
-  const {
-    data: { updateFruit }
-  } = await mutate({ mutation: UPDATE_FRUIT });
+    const {
+      data: { updateFruit }
+    } = await mutate({ mutation: UPDATE_FRUIT });
 
-  expect(updateFruit).toEqual({
-    id: "0",
-    scientific_name: "Malus Domestica",
-    tree_name: "Manzano",
-    fruit_name: "Manzana",
-    family: "Rosaceae",
-    origin: "Asia Central",
-    description: "La manzana es el fruto del manzano, árbol de la familia de las rosáceas. Es una fruta pomácea de forma",
-    bloom: "Primavera",
-    maturation_fruit: "Finales del verano o otoño",
-    life_cycle: "60-80 años",
-    climatic_zone: "Frio"
+    expect(updateFruit).toEqual({
+      id: "0",
+      scientific_name: "Malus Domestica",
+      tree_name: "Manzano",
+      fruit_name: "Manzana",
+      family: "Rosaceae",
+      origin: "Asia Central",
+      description: "La manzana es el fruto del manzano, árbol de la familia de las rosáceas. Es una fruta pomácea de forma",
+      bloom: "Primavera",
+      maturation_fruit: "Finales del verano o otoño",
+      life_cycle: "60-80 años",
+      climatic_zone: "Frio"
+    });
   });
-});
 
-test("Delete fruit", async () => {
-  const DELETE_FRUIT = gql`
+  it("Delete fruit", async () => {
+    const DELETE_FRUIT = gql`
     mutation {
       deleteFruit(id: "3") {
         id
@@ -115,9 +117,10 @@ test("Delete fruit", async () => {
     }
   `;
 
-  const {
-    data: { deleteFruit }
-  } = await mutate({ mutation: DELETE_FRUIT });
+    const {
+      data: { deleteFruit }
+    } = await mutate({ mutation: DELETE_FRUIT });
 
-  expect(deleteFruit).toEqual({ id: null });
+    expect(deleteFruit).toEqual({ id: null });
+  });
 });

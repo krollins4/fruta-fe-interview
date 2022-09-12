@@ -1,13 +1,18 @@
-const { ApolloServer, gql } = require('apollo-server-lambda');
-const { createTestClient } = require("apollo-server-testing");
-const { typeDefs, resolvers } = require('../graphql/index');
+import { ApolloServer, gql } from 'apollo-server-lambda';
+import { createTestClient } from 'apollo-server-testing';
+import { typeDefs, resolvers } from '../graphql/index';
+import { describe, it, expect } from 'vitest'
+
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const { query } = createTestClient(server);
 
-test("All fruits", async () => {
-  const ALL_FRUIT = gql`
+describe('Fruit API - Query', () => {
+
+
+  it("All fruits", async () => {
+    const ALL_FRUIT = gql`
     query {
       fruits {
         id
@@ -15,15 +20,15 @@ test("All fruits", async () => {
     }
   `;
 
-  const {
-    data: { fruits }
-  } = await query({ query: ALL_FRUIT });
+    const {
+      data: { fruits }
+    } = await query({ query: ALL_FRUIT });
 
-  expect(fruits).toEqual(expect.arrayContaining(fruits));
-});
+    expect(fruits).toEqual(expect.arrayContaining(fruits));
+  });
 
-test("Find one fruit", async () => {
-  const ONE_FRUIT = gql`
+  it("Find one fruit", async () => {
+    const ONE_FRUIT = gql`
     query {
       fruit(id: "1") {
         id
@@ -32,15 +37,15 @@ test("Find one fruit", async () => {
     }
   `;
 
-  const {
-    data: { fruit }
-  } = await query({ query: ONE_FRUIT });
+    const {
+      data: { fruit }
+    } = await query({ query: ONE_FRUIT });
 
-  expect(fruit).toEqual({ id: "1", family: "Rosaceae" });
-});
+    expect(fruit).toEqual({ id: "1", family: "Rosaceae" });
+  });
 
-test("Filter family", async () => {
-  const FILTER_FAMILY = gql`
+  it("Filter family", async () => {
+    const FILTER_FAMILY = gql`
     query {
       filterFruitsFam(family: "Musaceae") {
         id
@@ -49,15 +54,15 @@ test("Filter family", async () => {
     }
   `;
 
-  const {
-    data: { filterFruitsFam }
-  } = await query({ query: FILTER_FAMILY });
+    const {
+      data: { filterFruitsFam }
+    } = await query({ query: FILTER_FAMILY });
 
-  expect(filterFruitsFam).toEqual([{ id: "3", family: "Musaceae" }]);
-});
+    expect(filterFruitsFam).toEqual([{ id: "3", family: "Musaceae" }]);
+  });
 
-test("Filter origin", async () => {
-  const FILTER_ORIGIN = gql`
+  it("Filter origin", async () => {
+    const FILTER_ORIGIN = gql`
     query {
       filterFruitsOri(origin: "Africa") {
         origin
@@ -65,9 +70,10 @@ test("Filter origin", async () => {
     }
   `;
 
-  const {
-    data: { filterFruitsOri }
-  } = await query({ query: FILTER_ORIGIN });
+    const {
+      data: { filterFruitsOri }
+    } = await query({ query: FILTER_ORIGIN });
 
-  expect(filterFruitsOri).toEqual([{ origin: "Africa" }]);
-});
+    expect(filterFruitsOri).toEqual([{ origin: "Africa" }]);
+  });
+})
