@@ -1189,6 +1189,7 @@ module.exports = [
     maturation_fruit: "Verano",
     life_cycle: "100 años",
     climatic_zone: "Tropical",
+    created: "2022-07-30T00:00:00Z",
     producing_countries: [
       {
         country: "India",
