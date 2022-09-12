@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  functions = "functions"
+  publish = "src"
+
+[[redirects]]
+  from = "/graphql"
+  to = "/.netlify/functions/graphql"
+  status = 200
+  force = true
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"

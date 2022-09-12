@@ -1,0 +1,89 @@
+@import "./base.css";
+
+#app {
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.primary {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: 0.4s;
+}
+
+.markdown-body {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 16px;
+}
+
+li {
+  padding-left: 8px;
+}
+
+.markdown-body :is(h1,h2,h3,h4,h5) {
+  font-weight: 500;
+  color: var(--color-heading);
+}
+
+.markdown-body strong {
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.markdown-body code {
+  background-color: var(--color-background-mute);
+  color: var(--color-text-code);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.important {
+  color: var(p);
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 400ms;
+  position: absolute;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+footer {
+  font-size: 0.6rem;
+}
+
+
+.about {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  padding: 34px 0;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body, #app {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: calc(var(--section-gap) / 2);
+    height: 100vh;
+  }
+}
