@@ -14,7 +14,8 @@ Be sure to have it running: `yarn fruits:api`
 2. We have deliberately not included any wireframes. Please use your flair for UX to
     come up with something simple, clean and functional.
 
-3. The project should be branched off of this one and finally submitted as a pull request with a detailed description
+3. The project should be cloned from this one and submitted as a zip file.
+   * Optionally include a readme with any notes you would like us to have and any feedback on the assignment itself.
 
 4. You should let us know which requirements, if any, you were not able to cover.
   
