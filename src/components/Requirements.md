@@ -1,5 +1,5 @@
 ## Fruta Functional Requirements:
-*All functionality should be start via the already established /fruits route*
+*All functionality should start via the already established /fruits route*
 1. Should list all existing fruit
 
    a. List must have the following columns:
@@ -21,6 +21,7 @@ Any further functionality (e.g. update fruit) is out of scope for the initial ve
 
 #### GraphQL API
 
-All api requests can be made with the fruits-api `yarn fruits:api` Use the playground at `http://localhost:9000/graphql` to determine the structure of your requests. 
+All api requests can be made with the fruits-api `yarn fruits:api` Use the playground at `http://localhost:9000/graphql` to see what options are available in the api and to determine the structure of your requests. 
 A GraphQL client is already available in this application from [villus](https://villus.logaretm.com/guide/overview/), see the documentation for implementation in the project.
 One incomplete query has been added to the [fruits store](../stores/fruits.js) as a starting point.
+The primary functionality of the api is located in the `fruits-api/graphql/resolvers.js`

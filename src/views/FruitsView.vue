@@ -10,6 +10,7 @@ import EmptyState from '@/components/EmptyState.vue'
 <template>
 <main>
   <EmptyState/> 
+  <!-- Add full state here -->
 </main>
 </template>
 
