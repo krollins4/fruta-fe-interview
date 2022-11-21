@@ -6,6 +6,7 @@ import { useClient } from 'villus'
 
 useClient({
   url: `${window.location.origin}/graphql`,
+  cachePolicy: 'network-only',
 })
 </script>
 

@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { useQuery } from 'villus';
 
 // https://pinia.vuejs.org/core-concepts/
+// https://villus.logaretm.com/guide/mutations/
 
 export const useFruitsStore = defineStore('fruits', () => {
   async function listFruits() {
