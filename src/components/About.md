@@ -27,3 +27,6 @@ evenings). Think carefully about how you’ll use the time. It isn’t necessary
 
 2. What considerations should we make specifically related to internationalisation and accessibility of the platform?
 **answer goes here**
+
+3. Do you have any feedback about the exercise itself? Did you enjoy it? Did you find challenging? Any and all comments or thoughts about the exercise are fully acceptable.
+**answer goes here**
