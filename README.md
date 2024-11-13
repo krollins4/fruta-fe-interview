@@ -1,7 +1,8 @@
 # Fruta
 
 This repo is the starting point for building out assignment features for Fruta by integrating and utilizing the [fruits-api](#run-fruits-api), with the modern famework vue.
-[Run](#compile-and-hot-reload-for-development) the app for the assignment instructions. 
+
+**[Run](#compile-and-hot-reload-for-development) the app for the assignment instructions.**
 ## Recommended IDE Setup
 ### Node Version - 16+
 

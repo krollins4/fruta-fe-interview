@@ -20,7 +20,10 @@ Be sure to have it running: `yarn fruits:api`
 4. Please timebox your time on this homework to between 3 to 5 hours (i.e. one or two
 evenings). Think carefully about how you’ll use the time. It isn’t necessary to provide a complete solution, but we do want to see an aspect of it working end to end. Also please for the code you do complete, please deliver it as you would working code headed to a production environment.
 
-*Along with submitting the code you write, please also answer the following questions:*
+*Along with submitting the code you write, please also answer the following questions below the questions in About.md in the repo directly:*
 
 1. What changes would you ask for from the backend API developers to enable you to improve the experience for the user and ensure Fruta is scalable in terms of fruit count.
+**answer goes here**
+
 2. What considerations should we make specifically related to internationalisation and accessibility of the platform?
+**answer goes here**
