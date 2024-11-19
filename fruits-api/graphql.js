@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const { ApolloServer } = require('apollo-server-lambda');
 const depthLimit = require('graphql-depth-limit');
 

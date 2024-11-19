@@ -28,3 +28,5 @@ coverage
 *.sw?
 
 functions
+# Local Netlify folder
+.netlify

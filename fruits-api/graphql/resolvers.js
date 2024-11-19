@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const { UserInputError } = require('apollo-server-lambda');
 const fruits = require('../data/data');
 
